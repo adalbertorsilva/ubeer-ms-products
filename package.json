@@ -7,8 +7,7 @@
     "start": "npx nodemon server/index.js",
     "test": "NODE_ENV=test sequelize db:migrate; jest --forceExit --verbose --detectOpenHandles",
     "build:database": "npx sequelize db:create; npx sequelize db:migrate",
-    "lint": "npx eslint controllers/ __test__/ middlewares/ models/ seeders/ app.js",
-    "precommit": "npm run lint"
+    "lint": "npx eslint controllers/ __test__/ middlewares/ models/ seeders/ app.js"
   },
   "keywords": [
     "products",
@@ -35,7 +34,6 @@
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-standard": "^3.1.0",
-    "husky": "^0.14.3",
     "jest": "^23.1.0",
     "nodemon": "^1.17.5",
     "sinon": "^5.1.0",
