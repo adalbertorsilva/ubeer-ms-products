@@ -1,0 +1,43 @@
+{
+  "name": "ubeer-ms-product",
+  "version": "1.0.0",
+  "description": "Microservice to manage products",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx nodemon server/index.js",
+    "test": "NODE_ENV=test sequelize db:migrate; jest --forceExit --verbose --detectOpenHandles",
+    "build:database": "npx sequelize db:create; npx sequelize db:migrate",
+    "lint": "npx eslint controllers/ __test__/ middlewares/ models/ seeders/ app.js",
+    "precommit": "npm run lint"
+  },
+  "keywords": [
+    "products",
+    "beer"
+  ],
+  "author": "Adalberto Júnior",
+  "license": "ISC",
+  "dependencies": {
+    "auto-bind": "^1.2.0",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "pg": "^7.4.3",
+    "pg-hstore": "^2.3.2",
+    "require-all": "^2.2.0",
+    "sequelize": "^4.37.10",
+    "sequelize-cli": "^4.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "husky": "^0.14.3",
+    "jest": "^23.1.0",
+    "nodemon": "^1.17.5",
+    "sinon": "^5.1.0",
+    "supertest": "^3.1.0"
+  }
+}
