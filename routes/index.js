@@ -1,5 +1,13 @@
-const productsController = require('../controllers').products
+const requireAll = require('require-all')
 
 module.exports = (app) => {
-  app.post('/products', productsController.create)
+  const routes = requireAll(__dirname)
+
+  Object.keys(routes).forEach(key => {
+    if (key !== 'index') {
+      routes[key] = routes[key](app)
+    }
+  })
+
+  return routes
 }

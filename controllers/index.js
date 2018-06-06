@@ -1,5 +1,3 @@
-const products = require('./products')
+const requireAll = require('require-all')
 
-module.exports = {
-  products
-}
+module.exports = requireAll(__dirname)
