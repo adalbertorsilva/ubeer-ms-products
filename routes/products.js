@@ -1,5 +1,6 @@
 const {products: productsController} = require('../controllers')
+const {userpermition: userPermitionMiddleware} = require('../middlewares')
 
 module.exports = (app) => {
-  app.post('/products', productsController.create)
+  app.post('/products', userPermitionMiddleware.checkUserPermition, productsController.create)
 }
